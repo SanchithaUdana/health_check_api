@@ -41,7 +41,7 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/ec2_key.pem ubuntu@${{ secrets.EC2_IP }}"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/ec2_key.pem ubuntu@54.236.118.195 "
             # Log in to ECR
             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com
       
