@@ -9,21 +9,22 @@ jobs:
   build:
     runs-on: self-hosted  # Uses the self-hosted runner on EC2
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.9'
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-    - name: Run tests
-      run: python app.py & sleep 5; curl -f http://localhost:5000/health || exit 1
+      - name: Run tests
+        run: python app.py & sleep 5; curl -f http://localhost:5000/health || exit 1
 
-    - name: Build and Deploy
-      run: |
-        chmod +x deploy.sh
-        ./deploy.sh
+      # deploy
+      - name: Build and Deploy
+        run: |
+          chmod +x deploy.sh
+          ./deploy.sh
