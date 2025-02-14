@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/health', methods=['GET'])
 def health_check():
-    return jsonify({"status": "running flask app on AWS EC2 update 02"}), 200
+    return jsonify({"status": "running"}), 200
 
 
 if __name__ == '__main__':
