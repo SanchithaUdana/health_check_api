@@ -43,7 +43,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/ec2_key.pem ubuntu@54.236.118.195 "
             # Log in to ECR
-            aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com
+            aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 881490108954.dkr.ecr.us-east-1.amazonaws.com
       
             # Pull the Docker image
             docker pull 881490108954.dkr.ecr.us-east-1.amazonaws.com/flask-api-images:latest
