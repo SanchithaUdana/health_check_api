@@ -59,8 +59,13 @@ Before running this project, ensure you have:
 🔹 **AmazonEC2ContainerRegistryFullAccess**  
 🔹 **AmazonEC2FullAccess**  
 🔹 **AdministratorAccess** 
+- Attach the IAM role to the EC2 instance. 
 
-- Attach the IAM role to the EC2 instance.
+### 🔑 Role Include Below Policies 
+
+🔹 **AmazonEC2ContainerRegistryPowerUse**
+🔹 **AmazonElasticContainerRegistryPublicReadOnly**
+  
 ### ⚙ Step 4: Setup AWS CLI on EC2
 ```sh
 aws configure
